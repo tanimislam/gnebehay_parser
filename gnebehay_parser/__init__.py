@@ -54,7 +54,7 @@ def _get_token_mapping( tok ):
     raise Exception('Invalid token: {}'.format( tok ) )
 
 def lexical_analysis(s):
-    splitstring = s.strip( ).replace('(', ' ( ' ).replace(')', ' ) ' ).strip( ).split( )
+    splitstring = s.replace('(', ' ( ' ).replace(')', ' ) ' ).strip( ).split( )
     logging.debug( 'init splitstring = %s.' % splitstring )
     splitstring = list( chain.from_iterable(
         map(lambda tok:

@@ -1,0 +1,4 @@
+[console_scripts]
+gnebehay_compute = gnebehay_parser.cli.compute:main
+gnebehay_graphviz = gnebehay_parser.cli.graphviz:main
+

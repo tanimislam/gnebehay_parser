@@ -30,18 +30,18 @@ How to Use it
 
 .. code-block:: console
 
-   gnebehay_compute -i '2*(3+4)'
+   gnebehay_compute -i '2*(3+4^5)'
 
 and you should receive ``14`` as the result. This is perhaps not so surprising, but you can also run
 
 .. code-block:: console
 
-    gnebehay_graphviz -i '2*(3+4)' > graphviz_input
+    gnebehay_graphviz -i '2*(3+4^5)' > graphviz_input
     dot -Tpng graphviz_input -o output.png
 
 to get a visual representation of the abstract syntax tree (this requires having `Graphviz <https://graphviz.org/>`_ installed).
 
-.. figure:: figures/simple-tree.png
+.. figure:: examples/output.png
    :alt: simple tree
 
 Related Work

@@ -61,7 +61,7 @@ The literature regarding this topic is very formal, which makes it a bit hard to
 
 Problem
 -----------
-The problem is to bring algebraic expressions represented as a string into a form that can be easily reused for doing something interesting with it, such as computing the result of the expression or visualizing it nicely. The allowed algebraic operations are *addition*, *subrtraction*, *multipilcation*, *division*, as well as using (nested) parentheses ``( ... )``. The standard rules for operator precedence apply.
+The problem is to bring algebraic expressions represented as a string into a form that can be easily reused for doing something interesting with it, such as computing the result of the expression or visualizing it nicely. The allowed algebraic operations are *addition*, *subtraction*, *multipilcation*, *division*, as well as using (nested) parentheses ``( ... )``. The standard rules for operator precedence apply.
 
 |LL1| parsing
 ----------------

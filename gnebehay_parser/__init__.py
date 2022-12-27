@@ -53,22 +53,15 @@ def _get_token_mapping( tok ):
         return Node(TokenType.T_VAR, tok )
     raise Exception('Invalid token: {}'.format( tok ) )
 
-def _get_left_string( tok_sub ):
-    def _get_left_paren( tok ):
-        if len( tok ) == 0: return '('
-        return tok.strip( )
-    return list(map(_get_left_paren, tok_sub.strip().split('(') ) )
-
 def lexical_analysis(s):
-    splitstring = list(
-        filter(lambda elem: len(elem) > 0,
-               re.split(r'(\d+|\W+)', s.strip())))
-    #
-    ## because dumbass, I am ALSO doing a check for left-parens and including them.
-    ## I am not regex-fu-master enough to FIND left-parens and placing them there if found.
+    splitstring = s.strip( ).replace('(', ' ( ' ).replace(')', ' ) ' ).strip( ).split( )
+    logging.debug( 'init splitstring = %s.' % splitstring )
     splitstring = list( chain.from_iterable(
-        map(_get_left_string, splitstring)))
-    logging.debug( splitstring )
+        map(lambda tok:
+            filter(lambda elem: len(elem) > 0,
+                   re.split(r'(\d+|\W+)', tok.strip())), splitstring)))
+    logging.debug( 'final splitstring = %s.' % splitstring )
+    #
     tokens = list(map(
         _get_token_mapping, splitstring ) )
     #

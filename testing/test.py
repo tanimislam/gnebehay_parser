@@ -1,13 +1,11 @@
-import compute
-import parser
-
+from gnebehay_parser import parse
+from gnebehay_parser.cli.compute import _compute as compute
 
 def test_computation(inputstring, expected_output):
-    ast = parser.parse(inputstring)
-    actual_result = compute.compute(ast)
+    ast = parse(inputstring)
+    actual_result = compute(ast)
     print('{} should evaluate to {}, actual result is {}'.format(inputstring, expected_output, actual_result))
     assert actual_result == expected_output
-
 
 test_computation('1+1', 2)
 test_computation('1-1', 0)
